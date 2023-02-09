@@ -14,8 +14,7 @@ bool palindrome(int n)
     if(k==a)
     return true;
     else
-    return 
-    false;
+    return false;
 
 }
  
