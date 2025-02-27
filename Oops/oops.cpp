@@ -2,10 +2,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class hero{
+class Hero{
     //public:
     int health;
     public:
+
+    Hero()
+    {
+        cout<<"this is constructor call"<<endl;
+    }
+
+    //Parameterised constructor 
+    Hero(int health){
+
+    }
+
     char level;
 
     // if the data members are private, then we can access it through getter and setter 
@@ -30,11 +41,12 @@ class hero{
 
 int main()
 {
-    hero raj;
-    raj.setHealth(40);
-    raj.level = 'A';
-    cout<<"the health is "<<raj.getHealth()<<endl;
-    cout<<"The level is "<<raj.level;
+    Hero ramesh;
+    // hero raj;
+    // raj.setHealth(40);
+    // raj.level = 'A';
+    // cout<<"the health is "<<raj.getHealth()<<endl;
+    // cout<<"The level is "<<raj.level;
 
     return 0;
 }
