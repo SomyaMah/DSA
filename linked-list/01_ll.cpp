@@ -9,10 +9,10 @@ class Node
     Node* next;
 
     //Constructor
-    Node(int data)
+    Node(int val)
     {
-        this -> data = data;
-        this -> next = NULL;
+       data = val;
+        next=nullptr;
     }
 };
 
