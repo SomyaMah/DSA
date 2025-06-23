@@ -17,17 +17,17 @@ class Node{
 
 
 
-Node* insert(Node* &root,int k)
+Node* insertIntoBST(Node* root,int k)
 {
     if(root==NULL)
     return new Node(k);
 
     if(k<root->data)
     {
-        root->left =  insert(root->left,k);
+        root->left =  insertIntoBST(root->left,k);
     }
     else 
-    root->right = insert(root->right,k);
+    root->right = insertIntoBST(root->right,k);
 
     return root;
 }
@@ -37,21 +37,21 @@ void takeInput(Node* &root)
     cin>>data;
     while(data!=-1)
     {
-        root=insert(root,data);
+        root=insertIntoBST(root,data);
         cin>>data;
     }
 }
 
-// bool search(Node* root,int find)
-// {
-//     if(root==NULL) return false;
-//     if(root->data == find) return true;
+bool search(Node* root,int find)
+{
+    if(root==NULL) return false;
+    if(root->data == find) return true;
 
-//     if(find<root->data) search(root->left,find);
-//     else search(root->right,find);
+    if(find<root->data) search(root->left,find);
+    else search(root->right,find);
 
-//    // return false;
-// }
+    return false;
+}
 
 void preorder(Node* &root)
 {
@@ -65,11 +65,12 @@ void preorder(Node* &root)
 int main()
 {
     Node* root = NULL;
-    cout<<"Enter data to create BST ";
-    takeInput(root);
-
-    preorder(root);
-   // cout<<"100 is present in the array " << search(root,80);
+    cout<<"Enter data to create BST "<<endl;
+    takeInput(root);  
+    cout<<endl;
+   preorder(root);
+   cout<<endl;
+   cout<<"100 is present in the array " << search(root,80);
 
     return 0;
 }
